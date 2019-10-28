@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { HeaderButtons, HeaderButton } from "react-navigation-header-buttons";
-import { MaterialHeaderButtons, Item } from "./MyHeaderButtons";
+import { MaterialHeaderButtons, Item } from "../MyHeaderButtons";
 
 // export default function App() {
 //   return (
