@@ -8,6 +8,9 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
+    "babel-preset-react-native": "^4.0.1",
     "expo": "^35.0.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
