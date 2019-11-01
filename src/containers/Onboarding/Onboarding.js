@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { Flex, Text } from "~/styled";
 import { ScrollView, Dimensions, Image, StyleSheet } from "react-native";
 import { Slider } from "../../components/Slider";
+import * as Font from "expo-font";
 
-const Onboarding = () => {
+const Onboarding = fontLoaded => {
   const screenWidth = Dimensions.get("window").width;
   const screenHeight = Dimensions.get("window").height;
 
   const [activeSlide, setActiveSlide] = useState(0);
+
+  const styles = StyleSheet.create({
+    title: {
+      fontFamily: "open-sans-bold",
+      fontSize: 18,
+      color: "#000000",
+      textAlign: "center"
+    }
+  });
 
   return (
     <Flex grow={1} height="100%" width={screenWidth}>
@@ -22,7 +32,7 @@ const Onboarding = () => {
             }}
           />
           <Flex width="100%" flex-direction="row">
-            <Text>A whole new {"\n"} experience</Text>
+            <Text style={styles.title}>A whole new {"\n"} experience</Text>
             <Text>123</Text>
           </Flex>
         </Flex>
@@ -40,7 +50,13 @@ const Onboarding = () => {
           </Flex>
         </Flex>
       </Slider>
-      <Flex.Touchable onPress={() => setActiveSlide(activeSlide + 1)}>
+      <Flex.Touchable
+        onPress={() => {
+          activeSlide === 0
+            ? setActiveSlide(activeSlide + 1)
+            : alert("ebalo zavali");
+        }}
+      >
         <Text>increment slide</Text>
       </Flex.Touchable>
     </Flex>
