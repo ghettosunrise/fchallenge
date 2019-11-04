@@ -4,13 +4,15 @@ import { Flex } from "~/styled";
 
 const appWidth = Dimensions.get("window").width;
 
-const Slider = ({ children, activeSlide }) => {
+const Slider = ({ children, activeSlide, setActiveSlide }) => {
   const scrollView = useRef();
 
   const numberOfSlides = Children.count(children);
 
   const slides = Children.map(children, child => (
-    <Flex width={appWidth}>{child}</Flex>
+    <Flex alignItems="center" width={appWidth}>
+      {child}
+    </Flex>
   ));
 
   /*
@@ -28,7 +30,9 @@ const Slider = ({ children, activeSlide }) => {
       <ScrollView
         ref={scrollView}
         horizontal
-        pagingEnabled
+        onScrollEndDrag={() => {
+          activeSlide === 1 ? setActiveSlide(0) : null;
+        }}
         contentContainerStyle={{
           width: appWidth * numberOfSlides,
           height: "100%"
