@@ -4,6 +4,7 @@ import { Flex, Text } from "~/styled";
 import { ScrollView, Dimensions, Image, StyleSheet } from "react-native";
 import { Slider } from "../../components/Slider";
 import * as Font from "expo-font";
+import Indikator from "../../components/Indicator";
 
 const Onboarding = fontLoaded => {
   const screenWidth = Dimensions.get("window").width;
@@ -78,6 +79,7 @@ const Onboarding = fontLoaded => {
           </Flex>
         </Flex>
       </Slider>
+      <Indikator activeSlide={activeSlide} />
       <Flex.Absolute right="40px" bottom="15px">
         <Flex.Touchable
           style={styles.nextButton}

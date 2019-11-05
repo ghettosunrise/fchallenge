@@ -28,6 +28,7 @@ const Slider = ({ children, activeSlide, setActiveSlide }) => {
   return (
     <Flex width="100%" height="90%">
       <ScrollView
+        pagingEnabled
         ref={scrollView}
         horizontal
         onScrollEndDrag={() => {
